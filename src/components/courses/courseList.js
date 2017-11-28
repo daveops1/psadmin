@@ -24,7 +24,7 @@ var CourseList = React.createClass({
                 <tr key={course.id}>
                     <td><a href="#" onClick={this.deleteCourse.bind(this, course.id)}>Delete</a></td>
                     <td><Link to="manageCourse" params={{id: course.id}}>{course.id}</Link></td>
-                    <td>{course.title}</td>
+                    <td><a href={course.watchHref}>{course.title}</a></td>
                     <td>{course.author.name}</td>
                     <td>{course.length}</td>
                     <td>{course.category}</td>

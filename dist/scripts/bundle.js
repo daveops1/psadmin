@@ -52095,7 +52095,28 @@ var CourseForm = React.createClass({displayName: "CourseForm",
                     onChange: this.props.onChange, 
                     error: this.props.errors.title}), 
                     
+                React.createElement(Input, {
+                    name: "watchHref", 
+                    label: "Course Link", 
+                    value: this.props.course.watchHref, 
+                    onChange: this.props.onChange, 
+                    error: this.props.errors.watchHref}), 
+                    
                 React.createElement(AuthorDropDownList, {name: "author", list: this.props.authors, course: this.props.course, value: this.props.course.author.id, onChange: this.props.onChange, error: this.props.errors.author}), 
+                
+                React.createElement(Input, {
+                    name: "category", 
+                    label: "Category", 
+                    value: this.props.course.category, 
+                    onChange: this.props.onChange, 
+                    error: this.props.errors.category}), 
+                    
+                React.createElement(Input, {
+                    name: "length", 
+                    label: "Length", 
+                    value: this.props.course.length, 
+                    onChange: this.props.onChange, 
+                    error: this.props.errors.length}), 
                 
                 React.createElement("input", {type: "submit", value: "Save", className: "btn btn-default", onClick: this.props.onSave})
             )
@@ -52139,7 +52160,7 @@ var CourseList = React.createClass({displayName: "CourseList",
                 React.createElement("tr", {key: course.id}, 
                     React.createElement("td", null, React.createElement("a", {href: "#", onClick: this.deleteCourse.bind(this, course.id)}, "Delete")), 
                     React.createElement("td", null, React.createElement(Link, {to: "manageCourse", params: {id: course.id}}, course.id)), 
-                    React.createElement("td", null, course.title), 
+                    React.createElement("td", null, React.createElement("a", {href: course.watchHref}, course.title)), 
                     React.createElement("td", null, course.author.name), 
                     React.createElement("td", null, course.length), 
                     React.createElement("td", null, course.category)

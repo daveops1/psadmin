@@ -24,7 +24,28 @@ var CourseForm = React.createClass({
                     onChange={this.props.onChange} 
                     error={this.props.errors.title} />
                     
+                <Input
+                    name="watchHref"
+                    label="Course Link"
+                    value={this.props.course.watchHref}
+                    onChange={this.props.onChange} 
+                    error={this.props.errors.watchHref} />
+                    
                 <AuthorDropDownList name="author" list={this.props.authors} course={this.props.course} value = {this.props.course.author.id} onChange={this.props.onChange} error={this.props.errors.author} />
+                
+                <Input
+                    name="category"
+                    label="Category"
+                    value={this.props.course.category}
+                    onChange={this.props.onChange} 
+                    error={this.props.errors.category} />
+                    
+                <Input
+                    name="length"
+                    label="Length"
+                    value={this.props.course.length}
+                    onChange={this.props.onChange} 
+                    error={this.props.errors.length} />
                 
                 <input type="submit" value="Save" className="btn btn-default" onClick={this.props.onSave} />
             </form>
